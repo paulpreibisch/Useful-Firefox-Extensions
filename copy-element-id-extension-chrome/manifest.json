@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Quick ID Copy for Chrome",
+  "version": "1.0",
+  "description": "Right-click any element to quickly copy its ID to clipboard - perfect for AI-assisted development",
+
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "clipboardWrite"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+
+  "icons": {
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    },
+    "default_title": "Quick ID Copy"
+  }
+}
