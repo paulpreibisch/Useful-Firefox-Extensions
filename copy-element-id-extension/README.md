@@ -2,6 +2,18 @@
 
 A Firefox WebExtension that adds a "Copy Element ID" option to the browser's context menu, allowing users to easily copy element IDs, CSS selectors, and classes from any webpage.
 
+## ⚠️ Disclaimer
+
+**USE AT YOUR OWN RISK**: This extension was created for my personal development purposes, but you're welcome to use it. Please note:
+
+- This extension interacts with web page content and clipboard operations
+- No guarantees of functionality, compatibility, or support
+- May not work on all websites or with all Firefox versions
+- The author assumes no responsibility for any issues that may arise from its use
+- This is a personal project and may not receive regular updates
+
+By using this extension, you acknowledge and accept these terms.
+
 ## Features
 
 - **Copy Element ID**: Right-click any element to copy its ID to clipboard
@@ -133,7 +145,11 @@ For debugging:
 
 ## License
 
-This extension is provided as-is for educational and development purposes.
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for full details.
+
+MIT License © 2025 Paul Preibisch
+
+Permission is hereby granted to use, copy, modify, and distribute this software. See the LICENSE file for complete terms.
 
 ## Support
 
