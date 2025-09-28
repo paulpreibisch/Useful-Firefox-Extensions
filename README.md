@@ -102,15 +102,6 @@ This means you can:
 
 See the [LICENSE](./LICENSE) file for full details.
 
-## 🔮 Future Extensions
-
-Planned additions to this collection:
-- Quick XPath copier
-- CSS selector generator
-- Element dimension viewer
-- DOM tree navigator
-- Accessibility attribute inspector
-
 ## 📞 Contact
 
 Created by Paul Preibisch
