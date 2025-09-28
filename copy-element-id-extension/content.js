@@ -40,6 +40,38 @@ function getCSSSelector(element) {
   return path.join(' > ');
 }
 
+// Function to get XPath for an element
+function getXPath(element) {
+  if (element.id) {
+    return `//*[@id="${element.id}"]`;
+  }
+
+  const parts = [];
+  while (element && element.nodeType === Node.ELEMENT_NODE) {
+    let index = 0;
+    let sibling = element.previousSibling;
+
+    while (sibling) {
+      if (sibling.nodeType === Node.ELEMENT_NODE && sibling.nodeName === element.nodeName) {
+        index++;
+      }
+      sibling = sibling.previousSibling;
+    }
+
+    const tagName = element.nodeName.toLowerCase();
+    const pathPart = index > 0 ? `${tagName}[${index + 1}]` : tagName;
+    parts.unshift(pathPart);
+
+    if (element.id) {
+      return `//*[@id="${element.id}"]` + (parts.length > 1 ? '/' + parts.slice(1).join('/') : '');
+    }
+
+    element = element.parentElement;
+  }
+
+  return '/' + parts.join('/');
+}
+
 // Capture right-clicked element
 document.addEventListener('contextmenu', function(event) {
   lastRightClickedElement = event.target;
@@ -49,7 +81,8 @@ document.addEventListener('contextmenu', function(event) {
     id: lastRightClickedElement.id || null,
     classes: lastRightClickedElement.className || null,
     tagName: lastRightClickedElement.tagName.toLowerCase(),
-    selector: getCSSSelector(lastRightClickedElement)
+    selector: getCSSSelector(lastRightClickedElement),
+    xpath: getXPath(lastRightClickedElement)
   };
 
   // Send element info to background script
@@ -63,7 +96,8 @@ document.addEventListener('contextmenu', function(event) {
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "copyToClipboard") {
     copyToClipboard(message.text);
-    showNotification(`Copied: ${message.text}`);
+    const notificationText = message.copyType ? `Copied ${message.copyType}: ${message.text}` : `Copied: ${message.text}`;
+    showNotification(notificationText);
   }
 });
 

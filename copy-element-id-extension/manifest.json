@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Copy Element ID",
-  "version": "1.0",
-  "description": "Right-click any element to copy its ID to clipboard",
+  "name": "Quick ID Copy Tool",
+  "version": "1.1",
+  "description": "Right-click any element to quickly copy its ID, CSS selector, or XPath - perfect for AI-assisted development",
 
   "permissions": [
     "contextMenus",
