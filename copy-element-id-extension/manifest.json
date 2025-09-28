@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Copy Element ID",
+  "version": "1.0",
+  "description": "Right-click any element to copy its ID to clipboard",
+
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "clipboardWrite",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+
+  "icons": {
+    "48": "icon-48.png",
+    "96": "icon-96.png"
+  }
+}
