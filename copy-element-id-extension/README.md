@@ -28,14 +28,12 @@ By using this extension, you acknowledge and accept these terms.
 
 ## Features
 
-- **🤖 Quick Copy**: Robot emoji option at the top of context menu for instant ID copying
-- **Copy Element ID**: Right-click any element to copy its ID to clipboard
-- **Copy CSS Selector**: Get a unique CSS selector for any element
-- **Copy Classes**: Copy all classes of an element
-- **Dynamic Menu Labels**: Shows the actual ID/classes in the menu
+- **🤖 Quick ID Copy**: Single menu item that appears directly in the context menu
+- **Dynamic Labels**: Shows the actual element ID in the menu
 - **Visual Feedback**: Green notification when copying succeeds
 - **Works on All Sites**: Functions on any webpage
 - **Frame Support**: Works inside iframes
+- **No Submenus**: Direct access with one click
 
 ## Installation
 
@@ -67,12 +65,10 @@ The extension will be loaded temporarily until Firefox is closed.
 
 1. Navigate to any website
 2. Right-click on any element you want to inspect
-3. Look for the following options in the context menu:
-   - **🤖 Copy Element ID**: Quick access at the top of the menu - shows the actual ID if available
-   - **Copy ID (detailed)**: Shows as "Copy ID: 'actual-id' (detailed)" if element has an ID
-   - **Copy CSS Selector**: Always available, shows truncated selector
-   - **Copy Classes**: Shows element's classes if available
-4. Click the desired option to copy to clipboard
+3. Look for **🤖 Quick ID Copy** in the context menu
+   - If the element has an ID, it shows as: **🤖 Quick ID Copy: "element-id"**
+   - If no ID exists, it shows as: **🤖 Quick ID Copy (no ID)** and is disabled
+4. Click to instantly copy the element's ID
 5. A green notification will appear confirming the copy
 
 ## File Structure
