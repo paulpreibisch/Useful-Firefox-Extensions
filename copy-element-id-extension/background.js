@@ -2,41 +2,38 @@
 
 let lastElementInfo = null;
 
-// Create quick copy option with robot emoji - appears at the top of context menu
+// Create quick copy option with unique name to avoid submenu grouping
 browser.contextMenus.create({
   id: "quick-copy-id",
   title: "🤖 Copy Element ID",
   contexts: ["all"]
 });
 
-// Separator between quick option and detailed options
+// Create a parent menu item for additional options
 browser.contextMenus.create({
-  id: "separator-main",
-  type: "separator",
+  id: "element-tools",
+  title: "Element Tools",
   contexts: ["all"]
 });
 
-// Create the detailed menu items
+// Create child items under Element Tools
 browser.contextMenus.create({
-  id: "copy-element-id",
-  title: "Copy Element ID (detailed)",
-  contexts: ["all"]
-});
-
-browser.contextMenus.create({
-  id: "separator-1",
-  type: "separator",
+  id: "copy-element-id-detailed",
+  parentId: "element-tools",
+  title: "Copy ID (with details)",
   contexts: ["all"]
 });
 
 browser.contextMenus.create({
   id: "copy-element-selector",
+  parentId: "element-tools",
   title: "Copy CSS Selector",
   contexts: ["all"]
 });
 
 browser.contextMenus.create({
   id: "copy-element-classes",
+  parentId: "element-tools",
   title: "Copy Classes",
   contexts: ["all"]
 });
@@ -61,13 +58,13 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     // Update the detailed ID menu item
     if (lastElementInfo.id) {
-      browser.contextMenus.update("copy-element-id", {
-        title: `Copy ID: "${lastElementInfo.id}" (detailed)`,
+      browser.contextMenus.update("copy-element-id-detailed", {
+        title: `Copy ID: "${lastElementInfo.id}" (with details)`,
         enabled: true
       });
     } else {
-      browser.contextMenus.update("copy-element-id", {
-        title: `Copy Element ID (no ID found)`,
+      browser.contextMenus.update("copy-element-id-detailed", {
+        title: `Copy ID (no ID found)`,
         enabled: false
       });
     }
@@ -106,7 +103,7 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
     case "quick-copy-id":
       textToCopy = lastElementInfo?.id;
       break;
-    case "copy-element-id":
+    case "copy-element-id-detailed":
       textToCopy = lastElementInfo?.id;
       break;
     case "copy-element-selector":
