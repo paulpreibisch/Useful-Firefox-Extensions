@@ -1,6 +1,6 @@
-# Quick ID Copy - Chrome Extension
+# AI Quick Copy Tool - Chrome Extension
 
-A Chrome extension that adds a "Quick ID Copy" option to the browser's context menu, allowing users to instantly copy element IDs from any webpage - perfect for AI-assisted development.
+A simple Chrome extension that adds "🤖 AI Quick Copy" directly to your right-click menu for instant element ID copying - perfect for AI-assisted development.
 
 ## 💡 Why This Extension?
 
@@ -8,12 +8,12 @@ When working with AI assistants to debug or modify web interfaces, you often nee
 
 ## Features
 
-- **🤖 Quick ID Copy**: Single menu item that appears directly in Chrome's context menu
-- **Dynamic Labels**: Shows the actual element ID in the menu
+- **🤖 AI Quick Copy**: Single menu item directly in Chrome's context menu (no submenus!)
+- **Dynamic Labels**: Shows the actual element ID right in the menu item
+- **Smart Behavior**: Automatically disabled when element has no ID
 - **Visual Feedback**: Green notification confirms successful copy
-- **Universal**: Works on any website
-- **Frame Support**: Functions inside iframes
-- **No Submenus**: Direct access with one click
+- **Universal**: Works on any website including iframes
+- **Clean Design**: Just the robot emoji - no extra icons cluttering your menu
 
 ## Installation
 
@@ -40,9 +40,9 @@ When working with AI assistants to debug or modify web interfaces, you often nee
 
 1. Navigate to any website
 2. Right-click on any element
-3. Look for **🤖 Quick ID Copy** in the context menu
-   - If the element has an ID: Shows as **🤖 Quick ID Copy: "element-id"**
-   - If no ID exists: Shows as **🤖 Quick ID Copy (no ID)** and is disabled
+3. Look for **🤖 AI Quick Copy** in the main context menu
+   - If the element has an ID: Shows as **🤖 AI Quick Copy: "actual-id"**
+   - If no ID exists: Shows as **🤖 AI Quick Copy (no ID)** and is grayed out
 4. Click to instantly copy the element's ID
 5. A green notification confirms the copy
 

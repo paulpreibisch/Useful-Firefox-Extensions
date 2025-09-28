@@ -12,22 +12,23 @@ This repository contains browser extensions that solve real development problems
 
 ## 📦 Extensions
 
-### 1. Quick ID Copy (Firefox & Chrome)
+### 1. AI Quick Copy Tool (Firefox & Chrome)
 
 **Problem it solves:** When working with AI assistants (like Claude, ChatGPT, or Copilot) to debug or modify web interfaces, you constantly need to reference specific DOM elements. Opening developer tools, finding the element, and copying its ID breaks your flow.
 
-**Solution:** Right-click any element → "🤖 Quick ID Copy" → Done! The element ID is instantly copied to your clipboard.
+**Solution:** Right-click any element → "🤖 AI Quick Copy" → Done! The element ID is instantly copied to your clipboard.
 
 **Available for:**
 - [Firefox Extension](./copy-element-id-extension/) - Works with Firefox 57+
 - [Chrome Extension](./copy-element-id-extension-chrome/) - Works with Chrome 88+, Edge, Brave, and other Chromium browsers
 
 **Key Features:**
-- Single-click ID copying
-- No submenus or navigation required
-- Visual confirmation with notifications
-- Shows actual ID in menu item
+- Single-click ID copying directly in context menu (no submenus!)
+- Shows actual element ID in the menu label
+- Visual confirmation with green notification
+- Disabled automatically when element has no ID
 - Works on all websites including iframes
+- Just the emoji icon - clean and simple
 
 ## 🚀 Quick Start
 

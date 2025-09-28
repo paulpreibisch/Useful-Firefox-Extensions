@@ -1,6 +1,6 @@
-# Copy Element ID Firefox Extension
+# AI Quick Copy Tool - Firefox Extension
 
-A Firefox WebExtension that adds a "Copy Element ID" option to the browser's context menu, allowing users to easily copy element IDs, CSS selectors, and classes from any webpage.
+A simple Firefox extension that adds "🤖 AI Quick Copy" directly to your right-click menu for instant element ID copying - perfect for AI-assisted development.
 
 ## 💡 Motivation
 
@@ -12,7 +12,7 @@ This is especially useful when:
 - Needing to reference multiple elements in rapid succession
 - Teaching or demonstrating web development concepts
 
-The robot (🤖) "Copy Element ID" option gives instant access to element IDs without navigating through submenus - perfect for AI-assisted development!
+The robot emoji (🤖) appears directly in the main context menu - no submenus, just instant access!
 
 ## ⚠️ Disclaimer
 
@@ -28,12 +28,12 @@ By using this extension, you acknowledge and accept these terms.
 
 ## Features
 
-- **🤖 Quick ID Copy**: Single menu item that appears directly in the context menu
-- **Dynamic Labels**: Shows the actual element ID in the menu
-- **Visual Feedback**: Green notification when copying succeeds
-- **Works on All Sites**: Functions on any webpage
-- **Frame Support**: Works inside iframes
-- **No Submenus**: Direct access with one click
+- **🤖 AI Quick Copy**: Single menu item directly in Firefox's context menu (no submenus!)
+- **Dynamic Labels**: Shows the actual element ID right in the menu item
+- **Smart Behavior**: Automatically disabled when element has no ID
+- **Visual Feedback**: Green notification confirms successful copy
+- **Universal**: Works on any website including iframes
+- **Clean Design**: Just the robot emoji - no extra icons cluttering your menu
 
 ## Installation
 
@@ -65,11 +65,11 @@ The extension will be loaded temporarily until Firefox is closed.
 
 1. Navigate to any website
 2. Right-click on any element you want to inspect
-3. Look for **🤖 Quick ID Copy** in the context menu
-   - If the element has an ID, it shows as: **🤖 Quick ID Copy: "element-id"**
-   - If no ID exists, it shows as: **🤖 Quick ID Copy (no ID)** and is disabled
+3. Look for **🤖 AI Quick Copy** in the main context menu
+   - If the element has an ID: Shows as **🤖 AI Quick Copy: "actual-id"**
+   - If no ID exists: Shows as **🤖 AI Quick Copy (no ID)** and is grayed out
 4. Click to instantly copy the element's ID
-5. A green notification will appear confirming the copy
+5. A green notification appears confirming the copy
 
 ## File Structure
 
