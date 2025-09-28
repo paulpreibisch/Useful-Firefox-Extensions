@@ -2,6 +2,9 @@
 
 A simple Firefox extension that adds "🤖 AI Quick Copy" directly to your right-click menu for instant element ID copying - perfect for AI-assisted development.
 
+![AI Quick Copy in Action](../screenshots/context-menu-demo.png)
+*The extension in action - showing the element ID directly in the context menu*
+
 ## 💡 Motivation
 
 I created this extension because when developing with AI assistants, I often need to quickly reference specific elements on a webpage. Rather than opening developer tools, navigating to inspect mode, and finding the element ID, this extension provides a quick shortcut - just right-click and copy!

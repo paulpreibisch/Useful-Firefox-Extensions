@@ -2,6 +2,9 @@
 
 A simple Chrome extension that adds "🤖 AI Quick Copy" directly to your right-click menu for instant element ID copying - perfect for AI-assisted development.
 
+![AI Quick Copy in Action](../screenshots/context-menu-demo.png)
+*The extension in action - showing the element ID directly in the context menu*
+
 ## 💡 Why This Extension?
 
 When working with AI assistants to debug or modify web interfaces, you often need to quickly reference specific elements. This extension provides instant access to element IDs without the hassle of opening developer tools, navigating to inspect mode, and finding the element manually.

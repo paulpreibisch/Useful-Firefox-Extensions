@@ -18,6 +18,9 @@ This repository contains browser extensions that solve real development problems
 
 **Solution:** Right-click any element → "🤖 AI Quick Copy" → Done! The element ID is instantly copied to your clipboard.
 
+![Context Menu Demo](./screenshots/context-menu-demo.png)
+*Right-click any element to see the AI Quick Copy option with the element's ID*
+
 **Available for:**
 - [Firefox Extension](./copy-element-id-extension/) - Works with Firefox 57+
 - [Chrome Extension](./copy-element-id-extension-chrome/) - Works with Chrome 88+, Edge, Brave, and other Chromium browsers
