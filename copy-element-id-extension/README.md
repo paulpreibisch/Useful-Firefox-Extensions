@@ -2,6 +2,18 @@
 
 A Firefox WebExtension that adds a "Copy Element ID" option to the browser's context menu, allowing users to easily copy element IDs, CSS selectors, and classes from any webpage.
 
+## 💡 Motivation
+
+I created this extension because when developing with AI assistants, I often need to quickly reference specific elements on a webpage. Rather than opening developer tools, navigating to inspect mode, and finding the element ID, this extension provides a quick shortcut - just right-click and copy!
+
+This is especially useful when:
+- Working with AI to debug or modify web interfaces
+- Quickly identifying elements without breaking your workflow
+- Needing to reference multiple elements in rapid succession
+- Teaching or demonstrating web development concepts
+
+The robot (🤖) "Copy Element ID" option gives instant access to element IDs without navigating through submenus - perfect for AI-assisted development!
+
 ## ⚠️ Disclaimer
 
 **USE AT YOUR OWN RISK**: This extension was created for my personal development purposes, but you're welcome to use it. Please note:
@@ -16,6 +28,7 @@ By using this extension, you acknowledge and accept these terms.
 
 ## Features
 
+- **🤖 Quick Copy**: Robot emoji option at the top of context menu for instant ID copying
 - **Copy Element ID**: Right-click any element to copy its ID to clipboard
 - **Copy CSS Selector**: Get a unique CSS selector for any element
 - **Copy Classes**: Copy all classes of an element
@@ -55,7 +68,8 @@ The extension will be loaded temporarily until Firefox is closed.
 1. Navigate to any website
 2. Right-click on any element you want to inspect
 3. Look for the following options in the context menu:
-   - **Copy ID**: Shows as "Copy ID: 'actual-id'" if element has an ID
+   - **🤖 Copy Element ID**: Quick access at the top of the menu - shows the actual ID if available
+   - **Copy ID (detailed)**: Shows as "Copy ID: 'actual-id' (detailed)" if element has an ID
    - **Copy CSS Selector**: Always available, shows truncated selector
    - **Copy Classes**: Shows element's classes if available
 4. Click the desired option to copy to clipboard

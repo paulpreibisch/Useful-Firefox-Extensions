@@ -2,14 +2,27 @@
 
 let lastElementInfo = null;
 
-// Create the main context menu item when extension is installed
+// Create quick copy option with robot emoji - appears at the top of context menu
 browser.contextMenus.create({
-  id: "copy-element-id",
-  title: "Copy Element ID",
+  id: "quick-copy-id",
+  title: "🤖 Copy Element ID",
   contexts: ["all"]
 });
 
-// Optional: Create additional menu items
+// Separator between quick option and detailed options
+browser.contextMenus.create({
+  id: "separator-main",
+  type: "separator",
+  contexts: ["all"]
+});
+
+// Create the detailed menu items
+browser.contextMenus.create({
+  id: "copy-element-id",
+  title: "Copy Element ID (detailed)",
+  contexts: ["all"]
+});
+
 browser.contextMenus.create({
   id: "separator-1",
   type: "separator",
@@ -33,10 +46,23 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "elementInfo") {
     lastElementInfo = message.data;
 
-    // Update the ID menu item
+    // Update the quick copy option
+    if (lastElementInfo.id) {
+      browser.contextMenus.update("quick-copy-id", {
+        title: `🤖 Copy Element ID: "${lastElementInfo.id}"`,
+        enabled: true
+      });
+    } else {
+      browser.contextMenus.update("quick-copy-id", {
+        title: `🤖 Copy Element ID (no ID)`,
+        enabled: false
+      });
+    }
+
+    // Update the detailed ID menu item
     if (lastElementInfo.id) {
       browser.contextMenus.update("copy-element-id", {
-        title: `Copy ID: "${lastElementInfo.id}"`,
+        title: `Copy ID: "${lastElementInfo.id}" (detailed)`,
         enabled: true
       });
     } else {
@@ -77,6 +103,9 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
   let textToCopy = null;
 
   switch(info.menuItemId) {
+    case "quick-copy-id":
+      textToCopy = lastElementInfo?.id;
+      break;
     case "copy-element-id":
       textToCopy = lastElementInfo?.id;
       break;
