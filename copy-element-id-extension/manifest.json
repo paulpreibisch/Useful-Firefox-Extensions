@@ -29,6 +29,5 @@
       "run_at": "document_idle",
       "all_frames": true
     }
-  ],
-
+  ]
 }
