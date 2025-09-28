@@ -12,9 +12,7 @@
       "id": "ai-quick-copy@paulpreibisch.com",
       "strict_min_version": "57.0",
       "data_collection_permissions": {
-        "collect_user_data": false,
-        "collect_analytics": false,
-        "sell_user_data": false
+        "required": false
       }
     }
   },
