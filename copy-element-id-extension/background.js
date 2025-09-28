@@ -2,12 +2,12 @@
 
 let lastElementInfo = null;
 
-// Create main quick copy option with emoji only (no icon)
+// Create main quick copy option at ROOT level with unique naming
 browser.contextMenus.create({
-  id: "robot-quick-copy",
-  title: "🤖 Quick ID Copy",
-  contexts: ["all"],
-  icons: null  // No icon, just emoji
+  id: "ai-assistant-copy",
+  title: "🤖 AI Quick Copy",
+  contexts: ["all"]
+  // No parentId = appears at root level
 });
 
 // Create separator
@@ -54,13 +54,13 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     // Update the quick copy menu item with the actual ID
     if (lastElementInfo.id) {
-      browser.contextMenus.update("robot-quick-copy", {
-        title: `🤖 Quick ID Copy: "${lastElementInfo.id}"`,
+      browser.contextMenus.update("ai-assistant-copy", {
+        title: `🤖 AI Quick Copy: "${lastElementInfo.id}"`,
         enabled: true
       });
     } else {
-      browser.contextMenus.update("robot-quick-copy", {
-        title: `🤖 Quick ID Copy (no ID)`,
+      browser.contextMenus.update("ai-assistant-copy", {
+        title: `🤖 AI Quick Copy (no ID)`,
         enabled: false
       });
     }
@@ -111,7 +111,7 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
   let copyType = null;
 
   switch(info.menuItemId) {
-    case "robot-quick-copy":
+    case "ai-assistant-copy":
       textToCopy = lastElementInfo?.id;
       copyType = "ID";
       break;

@@ -1,8 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Quick ID Copy Tool",
-  "version": "1.1",
+  "name": "AI Quick Copy Tool",
+  "version": "1.2",
   "description": "Right-click any element to quickly copy its ID, CSS selector, or XPath - perfect for AI-assisted development",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ai-quick-copy@paulpreibisch.com"
+    }
+  },
 
   "permissions": [
     "contextMenus",
