@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "AI Quick Copy Tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Right-click to instantly copy element IDs - perfect for developers and AI-assisted coding",
 
   "author": "Paul Preibisch",
@@ -10,7 +10,12 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "ai-quick-copy@paulpreibisch.com",
-      "strict_min_version": "57.0"
+      "strict_min_version": "57.0",
+      "data_collection_permissions": {
+        "collect_user_data": false,
+        "collect_analytics": false,
+        "sell_user_data": false
+      }
     }
   },
 
